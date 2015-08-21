@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomCDGenerator.APP", "RandomCDGenerator\RandomCDGenerator.APP.csproj", "{F373D3C7-5FF8-4A6A-9523-0C54CCDA20E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomCDGenerator.Engine", "RandomCDGenerator.Engine\RandomCDGenerator.Engine.csproj", "{F9E86DD3-E825-44A0-97D9-AF4872A15C28}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F373D3C7-5FF8-4A6A-9523-0C54CCDA20E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F373D3C7-5FF8-4A6A-9523-0C54CCDA20E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F373D3C7-5FF8-4A6A-9523-0C54CCDA20E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F373D3C7-5FF8-4A6A-9523-0C54CCDA20E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9E86DD3-E825-44A0-97D9-AF4872A15C28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9E86DD3-E825-44A0-97D9-AF4872A15C28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9E86DD3-E825-44A0-97D9-AF4872A15C28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9E86DD3-E825-44A0-97D9-AF4872A15C28}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
