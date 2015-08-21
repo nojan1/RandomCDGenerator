@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace RandomCDGenerator.Engine
 {
+    public class NoMoreFilesException : Exception { }
+
     public class Mp3FileInfo
     {
         public string Path { get; set; }
@@ -44,6 +46,9 @@ namespace RandomCDGenerator.Engine
         {
             if (files == null)
                 throw new Exception("Not initialized!");
+
+            if (files.Count == 0)
+                throw new NoMoreFilesException();
 
             var rnd = new Random();
             string path = "";

@@ -22,6 +22,8 @@ namespace RandomCDGenerator
     public partial class MainWindow : Window
     {
         private Mp3FilePathProvider filePathProvider = new Mp3FilePathProvider();
+        private TrackList tracklist;
+        private Mp3FileInfo suggestion;
 
         public MainWindow()
         {
@@ -44,6 +46,59 @@ namespace RandomCDGenerator
             }
 
             btnScandir.IsEnabled = true;
+        }
+
+        private void btnNewTracklist_Click(object sender, RoutedEventArgs e)
+        {
+            tracklist = new TrackList(80 * 60);
+            SuggestNextTrack();
+        }
+
+        private void SuggestNextTrack()
+        {
+            txtRemaining.Text = tracklist.TimeRemaining.ToString() + " seconds remain";
+            try
+            {
+                suggestion = filePathProvider.Next();
+                txtArtist.Text = string.Join(",", suggestion.TaglibFile.Tag.AlbumArtists);
+                txtTitle.Text = suggestion.TaglibFile.Tag.Title;
+                grdSelectTrack.Visibility = Visibility.Visible;
+                lblDirectoryStatus.Text = filePathProvider.FileCount.ToString() + " filer tillgängliga";
+            }
+            catch (NoMoreFilesException)
+            {
+                MessageBox.Show("No more files available");
+                grdSelectTrack.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void btnYes_Click(object sender, RoutedEventArgs e)
+        {
+            tracklist.Add(suggestion);
+            SuggestNextTrack();
+        }
+
+        private void btnNo_Click(object sender, RoutedEventArgs e)
+        {
+            SuggestNextTrack();
+        }
+
+        private async void btnExport_Click(object sender, RoutedEventArgs e)
+        {
+            var exporter = new M3UCreator(tracklist);
+
+            this.IsEnabled = false;
+
+            try
+            {
+                await exporter.Write(txtM3UPath.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            this.IsEnabled = true;
         }
     }
 }
