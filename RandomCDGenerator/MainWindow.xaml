@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RandomCDGenerator"
+        xmlns:extended="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
         mc:Ignorable="d"
         Title="MainWindow" Height="356.407" Width="525">
     <Grid>
@@ -14,8 +15,9 @@
                 <TextBlock x:Name="lblDirectoryStatus" HorizontalAlignment="Left" Margin="4,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
             </Grid>
         </GroupBox>
-        <Button x:Name="btnNewTracklist" Content="New Tracklist" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top" Width="88" Click="btnNewTracklist_Click"/>
-        <TextBlock x:Name="txtRemaining" HorizontalAlignment="Left" Margin="110,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button x:Name="btnNewTracklist" Content="New Tracklist" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top" Width="88" Click="btnNewTracklist_Click" IsEnabled="False"/>
+        <extended:IntegerUpDown x:Name="txtMinutes" Margin="110,88,0,0" Height="20" Width="50" VerticalAlignment="Top" HorizontalAlignment="Left" Text="70" />
+            <TextBlock x:Name="txtRemaining" HorizontalAlignment="Left" Margin="195,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text=""/>
         <Grid x:Name="grdSelectTrack" HorizontalAlignment="Left" Height="168" Margin="69,115,0,0" VerticalAlignment="Top" Width="343" Visibility="Hidden">
             <Button x:Name="btnYes" Content="Yes pick it" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" Width="120" Click="btnYes_Click"/>
             <Button x:Name="btnNo" Content="No take another" HorizontalAlignment="Left" Margin="213,136,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.179,1.148" Click="btnNo_Click"/>

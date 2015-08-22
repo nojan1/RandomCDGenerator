@@ -39,6 +39,7 @@ namespace RandomCDGenerator
             {
                 await filePathProvider.Init(txtMusicDir.Text);
                 lblDirectoryStatus.Text = filePathProvider.FileCount.ToString() + " filer tillgängliga";
+                btnNewTracklist.IsEnabled = true;
             }
             catch (Exception ex)
             {
@@ -50,7 +51,14 @@ namespace RandomCDGenerator
 
         private void btnNewTracklist_Click(object sender, RoutedEventArgs e)
         {
-            tracklist = new TrackList(70 * 60);
+            if (!txtMinutes.Value.HasValue)
+            {
+                MessageBox.Show("Please select number of minutes first");
+                return;
+            }
+
+            int minutes = txtMinutes.Value.Value;
+            tracklist = new TrackList(minutes * 60);
             SuggestNextTrack();
         }
 
