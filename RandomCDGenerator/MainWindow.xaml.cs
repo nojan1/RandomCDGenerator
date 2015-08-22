@@ -50,7 +50,7 @@ namespace RandomCDGenerator
 
         private void btnNewTracklist_Click(object sender, RoutedEventArgs e)
         {
-            tracklist = new TrackList(80 * 60);
+            tracklist = new TrackList(70 * 60);
             SuggestNextTrack();
         }
 
