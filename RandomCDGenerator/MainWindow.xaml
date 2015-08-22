@@ -18,13 +18,14 @@
         </GroupBox>
         <Button x:Name="btnNewTracklist" Content="New Tracklist" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top" Width="88" Click="btnNewTracklist_Click"/>
         <TextBlock x:Name="txtRemaining" HorizontalAlignment="Left" Margin="110,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <Grid x:Name="grdSelectTrack" HorizontalAlignment="Left" Height="168" Margin="69,115,0,0" VerticalAlignment="Top" Width="343" Visibility="Hidden">
+        <Grid x:Name="grdSelectTrack" HorizontalAlignment="Left" Height="168" Margin="69,115,0,0" VerticalAlignment="Top" Width="343" Visibility="Visible">
             <Button x:Name="btnYes" Content="Yes pick it" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" Width="120" Click="btnYes_Click"/>
             <Button x:Name="btnNo" Content="No take another" HorizontalAlignment="Left" Margin="213,136,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.179,1.148" Click="btnNo_Click"/>
             <TextBlock x:Name="txtArtist" HorizontalAlignment="Stretch" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"
                        TextAlignment="Center" FontSize="18.667"/>
             <TextBlock x:Name="txtTitle" HorizontalAlignment="Stretch" Margin="10,54,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"
             	TextAlignment="Center" FontSize="16"/>
+            <TextBlock x:Name="lblPath" HorizontalAlignment="Left" Margin="10,91,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         </Grid>
 
     </Grid>

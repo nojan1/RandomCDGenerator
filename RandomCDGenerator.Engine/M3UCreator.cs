@@ -25,7 +25,7 @@ namespace RandomCDGenerator.Engine
                 foreach (var track in tracklist.Tracks)
                 {
                     await stream.WriteLineAsync(string.Format("#EXTINF:{0},{1} - {2}", (int)track.TaglibFile.Properties.Duration.TotalSeconds
-                                                                                     , string.Join(",", track.TaglibFile.Tag.AlbumArtists)
+                                                                                     , string.IsNullOrEmpty(track.TaglibFile.Tag.JoinedAlbumArtists) ? track.TaglibFile.Tag.JoinedPerformers : track.TaglibFile.Tag.JoinedAlbumArtists
                                                                                      , track.TaglibFile.Tag.Title));
 
                     await stream.WriteLineAsync(track.Path);
