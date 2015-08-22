@@ -56,7 +56,8 @@ namespace RandomCDGenerator
 
         private void SuggestNextTrack()
         {
-            txtRemaining.Text = tracklist.TimeRemaining.ToString() + " seconds remain";
+            var timeSpan = TimeSpan.FromSeconds(tracklist.TimeRemaining);
+            txtRemaining.Text = timeSpan.TotalMinutes.ToString() + " minutes remain";
             try
             {
                 suggestion = filePathProvider.Next();
