@@ -64,9 +64,13 @@ namespace RandomCDGenerator.Engine
                 {
                     taglibFile = TagLib.File.Create(path);
                 }
-                catch (TagLib.UnsupportedFormatException)
+                catch
                 {
                     //Don't care
+                    return new Mp3FileInfo
+                    {
+                        Path = path
+                    };
                 }
             }
 

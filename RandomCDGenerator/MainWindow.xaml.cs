@@ -70,16 +70,24 @@ namespace RandomCDGenerator
             {
                 suggestion = filePathProvider.Next();
 
-                if(suggestion.TaglibFile.Tag.AlbumArtists.Count() > 0)
-                {
-                    txtArtist.Text = suggestion.TaglibFile.Tag.JoinedAlbumArtists;
+                if(suggestion.TaglibFile != null) { 
+                    if(suggestion.TaglibFile.Tag.AlbumArtists.Count() > 0)
+                    {
+                        txtArtist.Text = suggestion.TaglibFile.Tag.JoinedAlbumArtists;
+                    }
+                    else
+                    {
+                        txtArtist.Text = suggestion.TaglibFile.Tag.JoinedPerformers;
+                    }
+                
+                    txtTitle.Text = suggestion.TaglibFile.Tag.Title;
                 }
                 else
                 {
-                    txtArtist.Text = suggestion.TaglibFile.Tag.JoinedPerformers;
+                    txtArtist.Text = "Unknown";
+                    txtTitle.Tag = "Unknown";
                 }
-                
-                txtTitle.Text = suggestion.TaglibFile.Tag.Title;
+
                 lblPath.Text = suggestion.Path;
                 grdSelectTrack.Visibility = Visibility.Visible;
                 lblDirectoryStatus.Text = filePathProvider.FileCount.ToString() + " filer tillgängliga";
